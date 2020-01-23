@@ -176,9 +176,10 @@ class Student extends Lambdasian {
         this.grade = Math.floor(Math.random() * 100) + 1;
     }
     listSubjects () {
-        let string = "Loving ";
-        this.favSubjects.forEach(function (subject) { string += `${subject}, `; });
-        return string;
+        //let string = "Loving ";
+        //this.favSubjects.forEach(function (subject) { string += `${subject}, `; });
+        //return string;
+        return `Loving ${this.favSubjects.reduce((string, subject) => string += subject + ', ', '')} `;
     }
     PRAssignment (subject) {
         return `${this.name} has submitted a PR for ${subject}`;
