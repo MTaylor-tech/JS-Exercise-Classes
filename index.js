@@ -134,7 +134,7 @@ class Lambdasian {
 */
 class Instructor extends Lambdasian {
     constructor (object) {
-        super(object);
+        super({...object});
         this.specialty = object.specialty;
         this.favLanguage = object.favLanguage;
         this.catchPhrase = object.catchPhrase;
@@ -168,10 +168,11 @@ class Instructor extends Lambdasian {
 */
 class Student extends Lambdasian {
     constructor (object) {
-        super(object);
+        super({...object});
         this.previousBackground = object.previousBackground;
         this.className = object.className;
         this.favSubjects = object.favSubjects;
+        //stretch goal - gives each student a random grade between 1-100
         this.grade = Math.floor(Math.random() * 100) + 1;
     }
     listSubjects () {
@@ -210,7 +211,7 @@ class Student extends Lambdasian {
 */
 class ProjectManager extends Instructor {
     constructor (object) {
-        super(object);
+        super({...object});
         this.gradClassName = object.gradClassName;
         this.favInstructor = object.favInstructor;
     }
