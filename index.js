@@ -145,9 +145,20 @@ class Instructor extends Lambdasian {
     grade (student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
-    assignGrade (student) {
-        //stretch goal. adds score from -5 to +5 to student's score
+    assignGrade(student, grade) {
+      //stretch goal. theoretically allows the instructor to grade an assignment and
+      //adds that grade to the student's overall grade
+        student.grade += grade;
+    }
+    assignRandomGrade (student) {
+        //stretch goal. adds random score from -5 to +5 to student's score
         student.grade += Math.floor(Math.random() * 10) -5;
+    }
+    assignRandomGradeInRange (student, min, max) {
+        //personal stretch goal. adds random score between min and max to student's overall score
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        student.grade += Math.floor(Math.random() * (max - min)) + min;
     }
 }
 
